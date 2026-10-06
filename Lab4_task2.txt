@@ -1,0 +1,31 @@
+Task 2 Queries 
+
+1. Names of all females
+?- female(X).
+Answers: X = sara ; X = nora.
+X matches each female in the facts.
+
+2. Whether there is any male
+?- male(X).
+Answers: X = ali ; X = ahmad ; X = muhammad ; X = faisal ; X = hassan ; X = khan.
+The query succeeds, so there is a male. Use ; to see more answers.
+
+3. Grandparent of Faisal
+?- parent(X, Y), parent(Y, faisal).
+Answer: X = ali, Y = muhammad.
+X is Faisal's grandparent because X is the parent of Faisal's parent Y.
+
+4. All daughters of Ahmad
+?- parent(ahmad, X), female(X).
+Answers: X = sara ; X = nora.
+X must be both Ahmad's child and female.
+
+5. Whether Ahmad and Muhammad have a common parent
+?- parent(X, ahmad), parent(X, muhammad).
+Answer: X = ali.
+The same parent X is the parent of both Ahmad and Muhammad.
+
+6. Whether Khan is the brother of Nora
+?- male(khan), parent(X, khan), parent(X, nora), khan \= nora.
+Answer: X = ahmad.
+Khan is a male and shares parent X with Nora, so he is her brother.
