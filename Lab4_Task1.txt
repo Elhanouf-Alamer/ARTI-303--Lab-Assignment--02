@@ -1,0 +1,41 @@
+Task 1 Queries
+
+1. ?- house = house.
+   Result: true.
+   Both terms are the same atom, so they unify.
+
+2. ?- house = abc.
+   Result: false.
+   %Different atoms can't unify.
+
+3. ?- edge(a,b) = edge(C,b).
+   Result: C = a.
+   The structures match, and C becomes a.
+
+4. ?- edge(a,d) = edge(C,B).
+   Result: C = a, B = d.
+   The structures match, so C becomes a and B becomes d.
+
+5. ?- edge(C,B) = edge(a,d).
+   Result: C = a, B = d.
+   The structures match, so C becomes a and B becomes d.
+
+6. ?- edge(A,f(g,h)) = edge(a,B).
+   Result: A = a, B = f(g,h).
+   A becomes a, and B becomes the compound term f(g,h).
+
+7. ?- edge(A,A) = edge(b,c).
+   Result: false.
+   A cannot be both b and c because they are different atoms.
+
+8. ?- edge(A,A) = edge(b,b).
+   Result: A = b.
+   Both occurrences of A can have the same value b.
+
+9. ?- A = B, B = f.
+   Result: A = B, B = f.
+   A and B share the same value, so both become f.
+
+10. ?- A = B, B = f, A = e.
+    Result: false.
+    A and B become f, so A cannot also unify with the different atom e.
